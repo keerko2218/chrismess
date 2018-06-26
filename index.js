@@ -14,7 +14,7 @@ let input = document.querySelector("#submit")
 
 input.addEventListener("keypress", function(event){
     if(event.which === 13){
-        console.log("Hello")
+        //console.log("Hello")
         button.click();
         event.preventDefault();
 
