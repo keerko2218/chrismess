@@ -13,13 +13,18 @@
 <h1> Chrismess </h1>
 <h1 id = "changed"> New Heading </h1>
 <h1>More Headings</h1>
-<p>Please Enter Something:</p>
-<form action="">
-<input id = "submit" type = "text" name = "text">
+
+<form id = "movieForm">
+    <input 
+    id = "submit" 
+    type = "text" 
+    name = "movieName"
+    placeholder = "Enter a movie"
+    autofocus
+    >
+    <button type ="submit"> Update Heading</button>
 </form>
-<button>
-    Sumbit
-</button>
+<ul id = "movies"></ul>
     <script src="index.js"></script>
 </body>
 </html>

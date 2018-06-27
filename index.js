@@ -1,25 +1,21 @@
-console.log("It Works!")
 
-const button = document.querySelector('button')
+const form = document.querySelector("#movieForm")
 
-const up = function (){
-    const p = document.querySelector("#changed")
-    p.textContent = document.querySelector("#submit").value
+
+function up(event){
+    event.preventDefault();
+    const movieName = document.querySelector("#submit").value 
+    const clear =  document.querySelector("#submit") 
+    const item = document.createElement('li')
+    item.textContent = movieName
+
+    const list = document.querySelector("#movies")
+    list.appendChild(item)
+
 }
 
-button.addEventListener('click', up)
+form.addEventListener('submit', up)
 
 
-let input = document.querySelector("#submit")
-
-input.addEventListener("keypress", function(event){
-    if(event.which === 13){
-        //console.log("Hello")
-        button.click();
-        event.preventDefault();
-
-    }    
-})
 
 
-//console.warn("Hello")
