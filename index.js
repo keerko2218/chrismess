@@ -1,20 +1,28 @@
 
 const form = document.querySelector("#movieForm")
 
+function createSpan(){
+   return document.createElement('span')
+}
 
-function up(event){
+function updateMovies(event){
     event.preventDefault();
+    
     const f = event.target
     const movieName = f.movieName.value
     const movieYear = f.movieYear.value 
-    //const clear =  document.querySelector("#submit") 
+
     const item = document.createElement('li')
-    const mName = document.createElement('span')
-    const mYear = document.createElement('span')
-    //item.textContent = movieName + " " + movieYear
+   
+    const mName = createSpan();
+    const mYear = createSpan();
+
+    item.style.color = "blue"
+    mName.style.color ="purple"
+    mYear.style.color = "DarkSlateBlue"
+
     mName.textContent = movieName + " "
     mYear.textContent = movieYear
-
 
     item.appendChild(mName)
     item.appendChild(mYear)
@@ -25,7 +33,7 @@ function up(event){
     f.reset();
 }
 
-form.addEventListener('submit', up)
+form.addEventListener('submit', updateMovies)
 
 
 

@@ -1,3 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css?family=Spirax');
+
 body{
-    font-family:Helvetica, Arial, sans-serif
+    font-family:'Spirax', cursive, Helvetica, Arial, sans-serif;
+    margin: 15;
+    background-color: thistle;
+    text-align: center;
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
+}
+
+ul{
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+h1{
+    text-align: center;
+
+}
+
+form{
+    text-align: center
+}
+button{
+    background-color: cornflowerblue;
+    color: white
 }
