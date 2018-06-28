@@ -1,5 +1,6 @@
 let clicked = false;
 let nameArray =[]
+let counter =0;
 class App{
     constructor(){
         const nameArray = []
@@ -44,8 +45,14 @@ class App{
         return item
     }
     favMovie(event){
-        const button = event.target.closest('#fav')
-        button.style.color = "pink"
+        const button = event.target.closest('#cookie')
+        if(counter%2 === 0){
+            button.style.color = "red"
+        }
+        else{
+            button.style.color = "blue"
+        }
+        counter++;
     }
 
    removeMovie(name,event){
@@ -75,7 +82,6 @@ updateMovies(event){
     f.reset()
     f.movieName.focus();
 }
-
 
 }
 const app = new App();
