@@ -1,7 +1,8 @@
+let clicked = false;
+let nameArray =[]
 class App{
     constructor(){
-        const nameArray =[]
-
+        this.nameArray = []
         const form = document.querySelector("#movieForm")
         form.addEventListener('submit',(ev)=>{
             ev.preventDefault()
@@ -9,7 +10,16 @@ class App{
         })
 
     }
-
+    removeFunc(movie, ev){
+        const button = ev.target;
+        const item = button.closest(".movie")
+        item.parentNode.removeChild(item);
+    
+        const i = this.nameArray.indexOf(movie)
+        this.spells.splice(i,1)
+    
+    }
+    
     createSpan(name, value){
         const span = document.createElement('span')
         span.classList.add(name)
@@ -34,6 +44,8 @@ class App{
         button.id = id
         return button
     }
+    
+    
 updateMovies(event){
     event.preventDefault();    
     const f = event.target
@@ -46,67 +58,33 @@ updateMovies(event){
     const list = document.querySelector("#movies")
     list.appendChild(item)
     item.style.color = "blue"
-    //nameArray.push(nameObject);
-    f.reset();
-    f.movieName.focus()
-    //const movieName = f.movieName.value
-    //const movieYear = f.movieYear.value 
-
-    
-    
-    //const mName = createSpan();
-    //const mYear = createSpan();
-    //const mTotal = createSpan();
-    
-    
-    //mName.style.color ="purple"
-    //mYear.style.color = "DarkSlateBlue"
-
-    //movieName.color = "blue"
-    
-    //mName.textContent = movieName + " "
-    //mYear.textContent = movieYear
-
+    nameArray.push(nameObject);
+   
     
 
-    
-
-    //mTotal.textContent = mName + mYear;
-
-    //nameArray.push(mTotal);
-
-    //item.appendChild(mName)
-    //item.appendChild(mYear)
-
-    
-
-    
-
+/*
     const del = this.createButton("Delete","delete")
     list.appendChild(del)
     del.addEventListener('click', this.deleteMovie)
     
     const fav = this.createButton("Favorite this movie", "favorite")
-    fav.addEventListener('click', this.favMovie)
     list.appendChild(fav)
-
-}
-
-favMovie(){
-    alert("hello")
-}
-deleteMovie(){
-    alert("imma kms")
-}
-/*
-function favMovie(event){
-    event.preventDefault();
-    const p = event.target
-    updateMovies();
-}
+    fav.addEventListener('click', this.favMovie)
+    if(clicked){
+        
+        clicked = false;
+    }
 */
-//form.addEventListener('submit', updateMovies)
-//form.addEventListener('fav', favMovie)
+    const button = document.querySelector('#delete')
+    button.addEventListener('click', this.removeFunc(,)
+
+    f.reset();
+    f.movieName.focus()
+}
+
+
+
+
 }
 const app = new App();
 
