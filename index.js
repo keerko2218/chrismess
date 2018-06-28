@@ -2,7 +2,7 @@ let clicked = false;
 let nameArray =[]
 class App{
     constructor(){
-        this.nameArray = []
+        const nameArray = []
         const form = document.querySelector("#movieForm")
         form.addEventListener('submit',(ev)=>{
             ev.preventDefault()
@@ -10,16 +10,8 @@ class App{
         })
 
     }
-    removeFunc(movie, ev){
-        const button = ev.target;
-        const item = button.closest(".movie")
-        item.parentNode.removeChild(item);
-    
-        const i = this.nameArray.indexOf(movie)
-        this.spells.splice(i,1)
-    
-    }
-    
+
+
     createSpan(name, value){
         const span = document.createElement('span')
         span.classList.add(name)
@@ -36,15 +28,23 @@ class App{
             const span = this.createSpan(propName, movie[propName])
             item.appendChild(span)
         })
+        const del  = document.createElement('button')
+        del.textContent = 'Delete'
+        del.id = "delete"
+        del.addEventListener('click', this.removeMovie.bind(this,movie))
+        item.appendChild(del);
         return item
     }
-    createButton(content, id){
-        const button = document.createElement("button")
-        button.textContent = content
-        button.id = id
-        return button
-    }
-    
+   removeMovie(name,event){
+        const button = event.target.closest('#movies')
+        //const item = document.getElementById('#movies');
+        button.remove(button);
+
+        const i = nameArray.indexOf(name)
+        nameArray.splice(i,1)
+
+   }
+ 
     
 updateMovies(event){
     event.preventDefault();    
@@ -59,30 +59,9 @@ updateMovies(event){
     list.appendChild(item)
     item.style.color = "blue"
     nameArray.push(nameObject);
-   
-    
-
-/*
-    const del = this.createButton("Delete","delete")
-    list.appendChild(del)
-    del.addEventListener('click', this.deleteMovie)
-    
-    const fav = this.createButton("Favorite this movie", "favorite")
-    list.appendChild(fav)
-    fav.addEventListener('click', this.favMovie)
-    if(clicked){
-        
-        clicked = false;
-    }
-*/
-    const button = document.querySelector('#delete')
-    button.addEventListener('click', this.removeFunc(,)
-
-    f.reset();
-    f.movieName.focus()
+    f.reset()
+    f.movieName.focus();
 }
-
-
 
 
 }
