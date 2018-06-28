@@ -20,6 +20,7 @@ class App{
     }
     createLi(movie){
         const item = document.createElement('li')
+        item.id = "cookie"
         item.classList.add('movie');
         //properties
         const prop = Object.keys(movie)
@@ -43,12 +44,12 @@ class App{
         return item
     }
     favMovie(event){
-        const button = event.target.closest('#movies')
-        //button.style.color = "pink"
+        const button = event.target.closest('#fav')
+        button.style.color = "pink"
     }
 
    removeMovie(name,event){
-        const button = event.target.closest('#movies')
+        const button = event.target.closest('#cookie')
         //const item = document.getElementById('#movies');
         button.remove(button);
 
