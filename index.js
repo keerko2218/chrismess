@@ -46,11 +46,14 @@ class App{
     }
     favMovie(event){
         const button = event.target.closest('#cookie')
+        const favorite = event.target.closest('#fav')
         if(counter%2 === 0){
             button.style.color = "red"
+            favorite.textContent = "Unfavorite a movie"
         }
         else{
             button.style.color = "blue"
+            favorite.textContent = "Favorite a movie"
         }
         counter++;
     }
