@@ -33,8 +33,20 @@ class App{
         del.id = "delete"
         del.addEventListener('click', this.removeMovie.bind(this,movie))
         item.appendChild(del);
+
+        const fav  = document.createElement('button')
+        fav.textContent = 'Favorite a Movie'
+        fav.id = "fav"
+        fav.addEventListener('click', this.favMovie.bind(movie))
+        item.appendChild(fav);
+
         return item
     }
+    favMovie(event){
+        const button = event.target.closest('#movies')
+        //button.style.color = "pink"
+    }
+
    removeMovie(name,event){
         const button = event.target.closest('#movies')
         //const item = document.getElementById('#movies');
